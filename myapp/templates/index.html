@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Begin in django index</title>
+
+</head>
+<!-- this file in the server it isn't only html ordinary  also is a module of python called template engine with this able use variables -->
+<body>
+  <!-- This comment indicates the inheritance of base.html to share its content -->
+  {% extends 'layouts/base.html' %}
+
+  <!-- This comment indicates the files static must be charge -->
+  {% load static %}
+
+  {% block content %}
+  <h1>{{title}}</h1>
+
+  <img src="{% static 'example_img.png' %}" alt="example_img" width="100">
+
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, quis mollitia tenetur nisi hic animi illo eligendi quisquam dolor distinctio molestias placeat sed consequuntur fuga possimus accusantium delectus deleniti eaque.</p>
+  {% endblock %}
+</body>
+</html>

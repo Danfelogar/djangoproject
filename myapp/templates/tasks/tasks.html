@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tasks Page</title>
+</head>
+<body>
+  {% extends 'layouts/base.html' %}
+
+  {% block content %}
+    <h1>Tasks Page</h1>
+
+    {% for task in tasks %}
+      <article style="display: flex; flex-direction: column; gap: 0.5rem;">
+        {# Note: this is Todo for later #}
+        <h3>{% if task.done == False %} &#128337; {% else %} &#x2705; {% endif %} {{task.title}}</h3>
+        <!-- {% if task.done == False %}
+          <span>Pending Task</span>
+        {% else %}
+          <p>Task Done</p>
+        {% endif %} -->
+        <span>{{task.description}}</span>
+        <span style="font-weight: bold;">Project: {{task.project}}</span>
+        <div>
+          <button>
+            Delete
+          </button>
+          <button>
+            &#x2705; Done
+          </button>
+        </div>
+      </article>
+    {% endfor %}
+  {% endblock %}
+</body>
+</html>

@@ -1,0 +1,22 @@
+{% extends 'layouts/base.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Project</title>
+</head>
+<body>
+  {% block content %}
+    <h1>Create Project</h1>
+    <form method="post">
+      {% csrf_token %}
+      {{form}}
+      <button>
+        Save
+      </button>
+    </form>
+  {% endblock %}
+</body>
+</html>

@@ -1,0 +1,19 @@
+{% extends 'layouts/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Details Projects</title>
+</head>
+<body>
+  {% block content %}
+    <h1>{{project}}</h1>
+    {% for task in tasks %}
+      <div class="card">
+        <h3>{{task.title}}</h3>
+      </div>
+    {% endfor %}
+  {% endblock %}
+</body>
+</html>

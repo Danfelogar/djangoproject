@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create a new task</title>
+</head>
+<body>
+  {% extends 'layouts/base.html' %}
+  {% block content %}
+    <h1>Create a new task</h1>
+
+    <!-- <input type="text">
+    <textarea name="description" id="1" cols="30" rows="10"></textarea> -->
+    <form method="post">
+      <!-- this token is not show 403 forbidden -->
+      {% csrf_token %}
+      <!-- as_p is a method that renders the form as a series of <p> tags -->
+      {{form.as_p}}
+      <button type="submit">
+        Save
+      </button>
+    </form>
+  {% endblock %}
+</body>
+</html>
